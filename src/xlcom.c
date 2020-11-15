@@ -1124,7 +1124,7 @@ static void do_named_let(xlValue form,int cont)
 /* extract_let_variables - extract a list of variable names from a let binding list */
 static xlValue extract_let_variables(xlValue bindings,int *pcnt)
 {
-    xlValue this,last;
+    xlValue this = NULL,last = NULL;
     xlCheck(2);
     xlPush(bindings);
     xlPush(xlNil);
@@ -1826,7 +1826,7 @@ static int findcvariable(int opcode,xlValue frame,xlValue sym,int *poff)
 static int findliteral(xlValue lit)
 {
     int o = xlFIRSTLIT;
-    xlValue t,p;
+    xlValue t = NULL,p = NULL;
 
     /* first check to see if the literal already exists */
     if ((t = xlCar(xlCdr(info))) != xlNil) {

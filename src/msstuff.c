@@ -215,7 +215,7 @@ static void ostflush(void)
 static int ostcheck(void)
 {
     if (s_usestdio && xlGetValue(s_usestdio) == xlFalse)
-	return kbhit() ? getch() : 0;
+	return _kbhit() ? _getch() : 0;
     else
         return 0;
 }
@@ -228,15 +228,15 @@ static void osflushoutput(void)
 /* xgetc - get a character from the terminal without echo */
 static int xgetc(void)
 {
-    while (!kbhit() && xlIdle())
+    while (!_kbhit() && xlIdle())
         ;
-    return getch();
+    return _getch();
 }
 
 /* xputc - put a character to the terminal */
 static void xputc(int ch)
 {
-    putch(ch);
+    _putch(ch);
 }
 
 /* xsystem - execute a system command */

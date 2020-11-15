@@ -205,7 +205,7 @@ xlValue xisetcdr(void)
 /* xnappend - destructively append lists */
 xlValue xnappend(void)
 {
-    xlValue next,last;
+    xlValue next = NULL,last = NULL;
 
     /* initialize */
     xlVal = xlNil;
@@ -262,7 +262,7 @@ xlValue xlist(void)
 /* xliststar - built-in function 'list*' */
 xlValue xliststar(void)
 {
-    xlValue last,next;
+    xlValue last = NULL,next = NULL;
 
     /* initialize the list */
     xlVal = xlNil;

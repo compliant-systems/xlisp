@@ -146,8 +146,8 @@ pb(xlopTCALL);pb(0x00);         /* 0019 TCALL 00                */
 /* getloadpath - get the load path */
 static xlValue getloadpath(void)
 {
-    char *entry,*path;
-    xlValue this,last;
+    char *entry = NULL,*path = NULL ;
+    xlValue this = NULL,last = NULL;
 
     /* get the load path */
     if ((path = xlosLoadPath()) == NULL)

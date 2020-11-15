@@ -534,8 +534,8 @@ static xlValue setit(int *pvar)
 /* xparsepathstring - built-in function 'parse-path-string' */
 xlValue xparsepathstring(void)
 {
-    xlValue this,last;
-    char *p,*entry;
+    xlValue this = NULL,last = NULL;
+    char *p = NULL,*entry = NULL;
 
     /* get the load path */
     xlVal = xlGetArgString();
